@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/default.css" />
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        @media all and (max-width: 40em) {
+
+            .my-breakpoint .ui-block-a,
+            .my-breakpoint .ui-block-b,
+            .my-breakpoint .ui-block-c,
+            .my-breakpoint .ui-block-d,
+            .my-breakpoint .ui-block-e {
+                width: 100%;
+                float: none;
+            }
+        }
+
+        @media all and (min-width: 30em) {
+            .my-breakpoint.ui-grid-b .ui-block-a {
+                width: 60%;
+            }
+
+            .my-breakpoint.ui-grid-b .ui-block-b {
+                width: 40%;
+            }
+        }
+
+        .reviews {
+            color: rgb(55, 56, 56);
+        }
+
+        #relatedAddBtn {
+            background-color: #31BB67;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body class="ui-mobile-viewport ui-overlay-c">
+    <div data-role="page">
+
+        <div data-role="header" data-theme="f" class="ui-header ui-bar-f" role="banner">
+            <div
+                class="ui-panel-content-wrap ui-body-c ui-panel-animate ui-panel-content-wrap-position-left ui-panel-content-wrap-display-reveal ui-panel-content-wrap-open header-content">
+                <!-- <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f ui-focus toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a> -->
+
+                <!-- <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext"
+                    class="ui-btn-left toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true"
+                    data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span
+                            class="ui-btn-text">
+                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;" >
+                </a>
+
+                <img src="../assets/cart.png" class="header-cart" /> -->
+                <!-- <img src="./Assets/logo.jpeg" class="logo" /> -->
+                <h1 class="title">Fresh Mart</h1>
+            </div>
+        </div>
+
+        <div data-role="content">
+            <fieldset class="ui-grid-b my-breakpoint">
+                <div class="ui-block-a">
+
+                    <br><br>
+                    <div>
+                        <center>
+                            <h2>Sign In</h2>
+                            <br>
+                            <form>
+                    
+                                <label for="firstName">First Name:</label>
+                                <input type="text" name="firstName" id="firstName" autocomplete="off"/>
+                                <br />
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" name="lastName" id="lastName" autocomplete="off"/>
+                                <br />
+                                <label for="email">Email Address:</label>
+                                <input type="text" name="email" id="email" autocomplete="off"/>
+                                <br />
+                                <label for="password">Password:</label>
+                                <input type="password" name="password" id="password" />
+                                <br />
+                                <label for="confirmPassword">Confirm Password:</label>
+                                <input type="password" name="confirmPassword" id="confirmPassword" />
+                            </form>
+                            <br />
+                            <button id="relatedAddBtn" onclick="location.href='login.html';" style="width: 15em;" src="">Sign Up</button>
+                        </center>
+                        
+                    </div>
+
+                </div>
+               
+            </fieldset>
+            
+        </div>
+    </div>
+
+    <script>
+        $('#addReview').on('click', function () {
+            var amount_val = $('#newReview').val();
+            if (amount_val != '') {
+                $('#reviewListview').append('<li> <h4>Venura </h4> <p class="reviews" style="font-size: medium;">' + amount_val + '</p> </li>').listview('refresh');
+                $('#newReview').val('');
+            }
+        });
+
+        $('#askQuestion').on('click', function () {
+            var amount_val = $('#newQuestion').val();
+            if (amount_val != '') {
+                $('#questionListview').append('<li> <h4>Venura </h4> <p class="reviews" style="font-size: medium;">' + amount_val + '</p> </li>').listview('refresh');
+                $('#newQuestion').val('');
+            }
+        });
+    </script>
+</body>
+
+</html>
