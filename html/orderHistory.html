@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Order Details</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <link rel="stylesheet" href="../css/orderHistory.css" />
+  <link rel="stylesheet" href="../css/default.css" />
+
+  <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <style>
+    @media all and (max-width: 40em) {
+
+      .my-breakpoint .ui-block-a,
+      .my-breakpoint .ui-block-b,
+      .my-breakpoint .ui-block-c,
+      .my-breakpoint .ui-block-d,
+      .my-breakpoint .ui-block-e {
+        width: 100%;
+        float: none;
+      }
+    }
+
+    @media all and (min-width: 30em) {
+      .my-breakpoint.ui-grid-b .ui-block-a {
+        width: 60%;
+      }
+
+      .my-breakpoint.ui-grid-b .ui-block-b {
+        width: 40%;
+      }
+    }
+
+    #ordered-items {
+      font-size: small;
+      margin-top: auto;
+      padding-left: 3em;
+    }
+
+    #ordered-price {
+      padding-left: 4em;
+      font-size: 0.95em;
+
+    }
+
+    #item {
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body class="ui-mobile-viewport ui-overlay-c">
+  <div data-role="page">
+
+    <div data-role="header" data-theme="f" class="ui-header ui-bar-f" role="banner">
+      <div
+        class="ui-panel-content-wrap ui-body-c ui-panel-animate ui-panel-content-wrap-position-left ui-panel-content-wrap-display-reveal ui-panel-content-wrap-open header-content">
+        <!-- <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f ui-focus toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a> -->
+
+        <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext"
+          class="ui-btn-left toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true"
+          data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">
+              <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;">
+        </a>
+
+        <!-- <img src="./Assets/logo.jpeg" class="logo" /> -->
+        <h1 class="title">Order Details</h1>
+      </div>
+    </div>
+
+    <div class="ui-grid-b my-breakpoint">
+      <div class="ui-block-a" style="padding: 1em;">
+        <h4>Order Reference No: <span style="color: rgb(32, 31, 31); font-size: 0.9em;"><i>123456</i></span></h4>
+        <h4>Order Placed Date Time <span style="color: rgb(32, 31, 31); font-size: 0.9em;"><i>2020-11-14 @ 01:00 PM</i>
+        </h4>
+        <h4>Order Summary</h4>
+        <table class="ui-responsive">
+          <tbody>
+            <tr>
+              <td id="item">Nestle Milkmaid 400g <i>
+                  <p id="ordered-items">1 x 350.00</p>
+                </i></td>
+              <td id="ordered-price">Rs.350.00</td>
+            </tr>
+            <tr>
+              <td id="item">Milo 400g Tin <i>
+                  <p id="ordered-items">1 x 450.00</p>
+                </i> </td>
+              <td id="ordered-price">Rs.450.00</td>
+            </tr>
+            <tr>
+              <td id="item">Nestle CERELAC 400g<i>
+                  <p id="ordered-items">1 x 400.00</p>
+                </i> </td>
+              <td id="ordered-price">Rs.400.00</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 3em;">Sub Total</td>
+              <td style="padding-top: 3em;" id="ordered-price">Rs. 1200.00</td>
+            </tr>
+
+            <tr>
+              <td>Delivery Charges</td>
+              <td id="ordered-price"> Rs. 99.00</td>
+            </tr>
+
+            <tr>
+              <td>Promotional Discounts</td>
+
+              <td id="ordered-price" style="color: red;">-Rs. 100.00</td>
+            </tr>
+
+            <tr>
+              <th>Total</th>
+
+              <th id="ordered-price">Rs. 1199.00</th>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="ui-block-b">
+        <div class="ui-body ui ui-body-d" id="container">
+
+          <a id="btn-scan-qr">
+            <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg">
+            <p id="qr-text">Verify Received Order</p>
+          </a>
+
+          <canvas hidden="" id="qr-canvas"></canvas>
+
+          <div id="qr-result" hidden="">
+            <b>Purchased Items :</b> <br><span id="outputData"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/qrCodeScanner.js"></script>
+</body>
+
+</html>

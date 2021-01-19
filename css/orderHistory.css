@@ -1,0 +1,53 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 0 10px;
+  height: 100%;
+  background: white;
+  margin: 0;
+}
+
+h1 {
+  color: black;
+  margin: 0;
+  padding: 15px;
+}
+
+#container {
+  text-align: center;
+  margin: 0;
+}
+
+#qr-canvas {
+  margin: auto;
+  /* padding-right: 1em; */
+  /* width: calc(100% - 20px); */
+  width: 400px;
+  max-width: 400px;
+}
+
+#btn-scan-qr {
+  cursor: pointer;
+}
+
+#qr-text {
+  font-size: small;
+}
+
+#btn-scan-qr img {
+  height: 5em;
+  padding: 15px;
+  margin: 15px;
+  background: white;
+}
+
+#qr-result {
+  font-size: 0.9em;
+  /* margin: 20px auto; */
+  padding-bottom: 2em;
+  max-width: 700px;
+  /* background-color: white; */
+}

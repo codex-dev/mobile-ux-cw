@@ -1,0 +1,63 @@
+.ui-bar-f {
+    background-image: linear-gradient(#31BB67, #31BB67);
+    height: 4.5em ;
+}
+
+.title {
+    color: #fff;
+    text-align:center;
+    font-size: 1.8em;
+    min-height: 1.1em;
+    display: block;
+    margin: 0 25%;
+    padding: .7em 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    outline: 0!important;
+}
+
+.logo {
+    margin-left: 4.5em;
+    max-height: 100%;
+    float: left;
+    align-self:auto;
+}
+
+.header-cart{
+    float: right;
+    height: 2.5em;
+    width: 2.5em;
+    margin-top: 1em;
+    padding-right: 0.5em;
+ }
+
+.header-content {
+    height: 4.5em ;
+}
+
+.toggle-side-panel {
+    float: left;
+}
+
+.panel {
+    background-color: rgba(6, 221, 28, 0.5);
+}
+
+.side-btn {
+    background-color: #31BB67;
+    border-color: #ddd;
+    color: #333;
+    text-shadow: 0 1px 0 #f3f3f3;
+    align-self:center;
+}
+
+.back-icon{
+    width : 30;
+    height: 30;
+    margin-top: 1.5em;
+}
+
+.hamburger-icon {
+    width: 40;
+    height: 40;
+}

@@ -1,0 +1,30 @@
+@media all and (max-width: 30em) {
+
+  .my-breakpoint .ui-block-a,
+  .my-breakpoint .ui-block-b,
+  .my-breakpoint .ui-block-c,
+  .my-breakpoint .ui-block-d,
+  .my-breakpoint .ui-block-e {
+      width: 100%;
+      float: none;
+  }
+}
+
+@media all and (min-width: 20em) {
+  .my-breakpoint.ui-grid-b .ui-block-a {
+      width: 60%;
+  }
+
+  .my-breakpoint.ui-grid-b .ui-block-b {
+      width: 40%;
+  }
+}
+
+.reviews {
+  color: rgb(55, 56, 56);
+}
+
+#relatedAddBtn{
+  background-color: #31BB67;
+  color: white;
+}
