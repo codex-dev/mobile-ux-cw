@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/default.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        #categories {
+            height: 3em;
+            width: 3em;
+        }
+
+        #card {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        tbody>tr>:nth-child() {
+            padding-right: 100px;
+        }
+
+        
+    </style>
+
+</head>
+
+<body class="ui-mobile-viewport ui-overlay-c">
+
+    <!--Header-->
+    <div data-role="header" data-theme="f" class="ui-header ui-bar-f" role="banner">
+        <div
+            class="ui-panel-content-wrap ui-body-c ui-panel-animate ui-panel-content-wrap-position-left ui-panel-content-wrap-display-reveal ui-panel-content-wrap-open header-content">
+            <!-- <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f ui-focus toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a> -->
+
+            <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext"
+                class="ui-btn-left toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true"
+                data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">
+                        <img src="../assets/side-menu.png" width="40" height="40" style="margin-top: 1.1em;">
+            </a>
+            <img src="../assets/cart.png" class="header-cart" />
+            <!-- <img src="./Assets/logo.jpeg" class="logo" /> -->
+            <h1 class="title">Fresh Mart</h1>
+        </div>
+    </div>
+
+    <!--Side Panel-->
+    <div data-role="panel" data-position="left" data-position-fixed="false" data-display="reveal" id="nav-panel"
+        data-theme="a"
+        class="ui-panel ui-panel-position-left ui-panel-display-reveal ui-body-a ui-panel-animate ui-panel-open panel">
+
+        <div class="ui-panel-inner">
+            <ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin-top:-16px;"
+                class="nav-search ui-listview side-btn">
+                <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div"
+                    data-icon="arrow-r" data-iconpos="right" data-theme="a" class="side-btn">
+                    <div class="ui-li side-btn ">
+                        <div class="ui-btn-text side-btn ">
+                            <a href="#" class="ui-link-inherit side-btn ">Products</a>
+                <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div"
+                    data-icon="arrow-r" data-iconpos="right" data-theme="a" class="side-btn">
+                    <div class="ui-btn-inner ui-li side-btn ">
+                        <div class="ui-btn-text side-btn ">
+                            <a href="#" class="ui-link-inherit side-btn ">Wishlist</a>
+                <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div"
+                    data-icon="arrow-r" data-iconpos="right" data-theme="a" class="side-btn">
+                    <div class="ui-btn-inner ui-li side-btn ">
+                        <div class="ui-btn-text side-btn ">
+                            <a href="#" class="ui-link-inherit side-btn ">My Orders</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--Content Goes Here-->
+
+
+    <div>
+        <table class="ui-responsive" id="card">
+            <tbody>
+                <tr>
+                    <th><img src="../assets/hamburger.svg" id="categories"
+                            onclick="location.href='productDetails.html';">
+                    </th>
+                    <th><img src="../assets/single-bed.svg" id="categories"
+                            onclick="location.href='productDetailsB.html';">
+                    </th>
+                    <th><img src="../assets/handbag.svg" id="categories"
+                            onclick="location.href='productDetailsB.html';">
+                    </th>
+                    <th><img src="../assets/idea.svg" id="categories" onclick="location.href='productDetailsB.html';">
+                    </th>
+                </tr>
+                <tr>
+                    <td><b>Foods</b></td>
+                    <td><b>Home</b></td>
+                    <td><b>Accessory</b></td>
+                    <td><b>Electronic</b></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <h2 style="margin-left: 1em; color:dimgray"> Today Deals</h2>
+    <div style="display: flex;">
+        <div class="card" onclick="location.href='productDetails.html';">
+            <img src="../assets/milkmade.png" style="width:60%">
+            <div class="container">
+                <h4><b>MILKMAID Sweetened Milk – 510g</b></h4>
+                <div class= "price"><h5>Rs. 450</h5> <h4 style="padding-left: 1em;">Rs. 320/=</h4></div>
+            </div>
+        </div>
+
+        <div class="card" onclick="location.href='productDetailsB.html';">
+            <div style="padding-top: 1em;">
+            <img src="../assets/Cerelac.png" style="width:60%"></div>
+            <div class="container">
+                <h4><b>Nestle Infant CERELAC - 250g</b></h4>
+            </div>
+        </div>
+
+        <div class="card" onclick="location.href='productDetailsC.html';">
+            <img src="../assets/milo.png" style="width:60%">
+            <div class="container">
+                <h4><b>MILO Balls Breakfast 400g Tin</b></h4>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

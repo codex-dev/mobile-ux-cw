@@ -39,9 +39,16 @@
             color: rgb(55, 56, 56);
         }
 
+
         #relatedAddBtn {
             background-color: #31BB67;
             color: white;
+        }
+
+        #replyButton {
+            text-align: right;
+            color: darkgrey;
+            margin-right: 1em;
         }
     </style>
 
@@ -59,7 +66,7 @@
                     class="ui-btn-left toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true"
                     data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span
                             class="ui-btn-text">
-                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;" >
+                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;">
                 </a>
 
                 <img src="../assets/cart.png" class="header-cart" />
@@ -127,10 +134,13 @@
                             <li>
                                 <h4>Ishara</h4>
                                 <p class="reviews" style="font-size: medium;">How long will it take to deliver?</p>
+                                <p id="replyButton">Reply</p>
+                                <div id="textboxDiv"></div> 
                             </li>
                             <li>
                                 <h4>Ravindu</h4>
                                 <p class="reviews" style="font-size: medium;">Delivery chargers?</p>
+                                <p id="replyButton">Reply</p>
                             </li>
                         </ul>
                     </div>
@@ -143,8 +153,9 @@
                         <tr>
                             <th><img src="../assets/Cerelac.png" style="width: 10em; height: 10em;"
                                     onclick="location.href='productDetailsB.html';"></th>
-                            <th style="padding-left: 2em"><img src="../assets/milo.png" style="width: 10em; height: 12em;"
-                                    onclick="location.href='productDetailsC.html';"></th>
+                            <th style="padding-left: 2em"><img src="../assets/milo.png"
+                                    style="width: 10em; height: 12em;" onclick="location.href='productDetailsC.html';">
+                            </th>
                         </tr>
                         <tr>
                             <td>Nestle CERELAC Infant Ceralac..</td>
@@ -180,6 +191,14 @@
                 $('#newQuestion').val('');
             }
         });
+
+        $(document).ready(function() {
+            $("#replyButton").on("click", function () {
+                $("#replyButton").hide();
+                $("#textboxDiv").append("<div><input type='text'/></div>");
+            });
+        });
+
     </script>
     <script src="../js/addToCart.js"></script>
 </body>

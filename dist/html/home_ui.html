@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Navigation Bar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- the three things that jQuery Mobile needs to work -->
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/homeSlider.css" type="text/css" />
+
+  <script type="text/javascript" src="../js/homeSlider.js"></script>
+  <!-- <link rel="stylesheet" href="../css/home_ui.css" /> -->
+
+</head>
+
+<body>
+  <!-- This is the first page -->
+  <section id="firstpage" data-role="page">
+    <header data-role="header" data-position="fixed" style="background-color:#31BB67;">
+      <h1>Wishlist</h1>
+      <a href="#" class="ui-btn-left ui-btn ui-icon-user ui-btn-icon-notext ui-shadow ui-corner-all"
+        data-role="button"></a>
+      <a href="../html/cart.html" class="ui-btn-right ui-btn ui-icon-bullets ui-btn-icon-notext ui-shadow ui-corner-all"
+        data-role="button"></a>
+
+      <input type="search" name="search-mini" id="search-mini" value="" data-mini="false"
+        placeholder="Search Wishlist" />
+    </header>
+    <div class="ui-content">
+      <h2>Page 1 show the weekly task items</h2>
+      <ul data-role="listview" data-filter="true" data-filter-placeholder="Filter" item="true">
+        <li data-role="list-divider">Monday list items</li>
+        <li><a href="#">Item 1</a></li>
+        <li><a href="#">Item 2 </a></li>
+        <li><a href="#">Item 3 </a></li>
+        <li data-role="list-divider">Tuesday list items</li>
+        <li><a href="#">Item 1 </a></li>
+        <li><a href="#">Item 2 </a></li>
+        <li><a href="#">Item 3 </a></li>
+      </ul>
+    </div>
+    <footer data-role="footer" data-position="fixed">
+      <nav data-role="navbar">
+        <ul>
+          <li><a href="#firstpage" class="ui-btn ui-icon-heart ui-btn-icon-top ui-btn-active ui-state-persist"
+              style="background-color:#31BB67;">Wishlist</a></li>
+          <li><a href="#secondpage" class="ui-btn ui-icon-grid ui-btn-icon-top"
+              style="background-color:#31BB67;">Products</a></li>
+          <li><a href="#thirdpage" class="ui-btn ui-icon-shop ui-btn-icon-top " style="background-color:#31BB67;">My
+              Orders</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </section>
+
+  <section id="secondpage" data-role="page">
+    <header data-role="header" data-position="fixed" style="background-color:#31BB67;">
+      <h1>Fresh Mart</h1>
+      <a href="#" class="ui-btn-left ui-btn ui-icon-user ui-btn-icon-notext ui-shadow ui-corner-all"
+        data-role="button"></a>
+      <a href="../html/cart.html" class="ui-btn-right ui-btn ui-icon-bullets ui-btn-icon-notext ui-shadow ui-corner-all"
+        data-role="button"></a>
+
+      <input type="search" name="search-mini" id="search-mini" value="" data-mini="false"
+        placeholder="Search Products" />
+    </header>
+
+    <div id="games">
+
+      <div class="imgbox">
+        <img class="center-fit" src='../assets/slide4.jpg' target="_blank">
+      </div>
+
+      <a href="http://www.princeofpersiagame.com/" target="_blank">
+        <img class="center-fit" src='../assets/slide1.jpg' />
+      </a>
+
+      <div class="imgbox">
+        <img class="center-fit" src='../assets/slide6.png'>
+      </div>
+
+    </div>
+    <script>
+      $('#games').coinslider();
+    </script>
+
+    <div>
+      <table class="ui-responsive" id="card">
+        <tbody>
+          <tr>
+            <th><img src="../assets/hamburger.svg" id="categories" onclick="location.href='productDetails.html';">
+            </th>
+            <th><img src="../assets/single-bed.svg" id="categories" onclick="location.href='productDetailsB.html';">
+            </th>
+            <th><img src="../assets/handbag.svg" id="categories" onclick="location.href='productDetailsB.html';">
+            </th>
+            <th><img src="../assets/idea.svg" id="categories" onclick="location.href='productDetailsB.html';">
+            </th>
+          </tr>
+          <tr>
+            <td><b>Foods</b></td>
+            <td><b>Home</b></td>
+            <td><b>Accessory</b></td>
+            <td><b>Electronic</b></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <h2 style="margin-left: 1em; color:dimgray"> Today Deals</h2>
+    <div style="display: flex;">
+
+      <div class="card" onclick="location.href='productDetails.html';">
+        <img src="../assets/milkmade.png" style="width:60%">
+        <div class="container">
+          <h4><b>MILKMAID Sweetened– 510g</b></h4>
+          <div class="price">
+            <h5>Rs. 450</h5>
+            <h4 style="padding-left: 1em;">Rs. 320/=</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="location.href='productDetailsB.html';">
+        <div style="padding-top: 0.5em;">
+          <img src="../assets/Cerelac.png" style="width:60%">
+        </div>
+        <div class="container"><br>
+          <h4><b>Nestle Infant CERELAC - 250g</b></h4>
+          <div class="price">
+            <h5>Rs. 450</h5>
+            <h4 style="padding-left: 1em;">Rs. 320/=</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="card" onclick="location.href='productDetailsC.html';">
+          <img src="../assets/milo.png" style="width:60%">
+          <div class="container">
+              <h4><b>MILO Balls Breakfast 400g Tin</b></h4>
+          </div>
+      </div> -->
+    </div>
+    <footer data-role="footer" data-position="fixed">
+      <nav data-role="navbar">
+        <ul>
+          <li><a href="#firstpage" class="ui-btn ui-icon-heart ui-btn-icon-top "
+              style="background-color:#31BB67;">Wishlist</a></li>
+          <li><a href="#secondpage" class="ui-btn ui-icon-grid ui-btn-icon-top ui-btn-active ui-state-persist"
+              style="background-color:#31BB67;">Products</a></li>
+          <li><a href="#thirdpage" class="ui-btn ui-icon-shop ui-btn-icon-top " style="background-color:#31BB67;">My
+              Orders</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </section>
+
+  <section id="thirdpage" data-role="page">
+    <header data-role="header" data-position="fixed" style="background-color:#31BB67;">
+      <h1>My Orders</h1>
+      <a href="#" class="ui-btn-left ui-btn ui-icon-user ui-btn-icon-notext ui-shadow ui-corner-all"
+        data-role="button"></a>
+      <a href="../html/cart.html" class="ui-btn-right ui-btn ui-icon-bullets ui-btn-icon-notext ui-shadow ui-corner-all"
+        data-role="button"></a>
+
+      <input type="search" name="search-mini" id="search-mini" value="" data-mini="false"
+        placeholder="Search My Orders" />
+    </header>
+    <!-- <div class="ui-content">
+      <h2>Page 1 show the weekly task items</h2>
+      <ul data-role="listview" data-filter="true" data-filter-placeholder="Filter" item="true">
+        <li data-role="list-divider">Monday list items</li>
+        <li><a href="#">Item 1</a></li>
+        <li><a href="#">Item 2 </a></li>
+        <li><a href="#">Item 3 </a></li>
+        <li data-role="list-divider">Tuesday list items</li>
+        <li><a href="#">Item 1 </a></li>
+        <li><a href="#">Item 2 </a></li>
+        <li><a href="#">Item 3 </a></li>
+      </ul>
+    </div> -->
+    <footer data-role="footer" data-position="fixed">
+      <nav data-role="navbar">
+        <ul>
+          <li><a href="#firstpage" class="ui-btn ui-icon-heart ui-btn-icon-top "
+              style="background-color:#31BB67;">Wishlist</a></li>
+          <li><a href="#secondpage" class="ui-btn ui-icon-grid ui-btn-icon-top "
+              style="background-color:#31BB67;">Products</a></li>
+          <li><a href="#thirdpage" class="ui-btn ui-icon-shop ui-btn-icon-top ui-btn-active ui-state-persist"
+              style="background-color:#31BB67;">My Orders</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </section>
+
+</body>
+
+</html>

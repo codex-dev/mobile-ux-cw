@@ -1,89 +1,185 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
+
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <link rel="stylesheet" href="../css/default.css" />
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.2.3/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.2.3/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.2.3/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.2.3/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.2.3/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.2.3/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.2.3/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.2.3/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.2.3/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.2.3/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
+    <style>
+        @media all and (max-width: 40em) {
+
+            .my-breakpoint .ui-block-a,
+            .my-breakpoint .ui-block-b,
+            .my-breakpoint .ui-block-c,
+            .my-breakpoint .ui-block-d,
+            .my-breakpoint .ui-block-e {
+                width: 100%;
+                float: none;
+            }
+        }
+
+        @media all and (min-width: 30em) {
+            .my-breakpoint.ui-grid-b .ui-block-a {
+                width: 60%;
+            }
+
+            .my-breakpoint.ui-grid-b .ui-block-b {
+                width: 40%;
+            }
+        }
+
+        .reviews {
+            color: rgb(55, 56, 56);
+        }
+
+        #relatedAddBtn {
+            background-color: #31BB67;
+            color: white;
+        }
     </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+
+</head>
+
+<body class="ui-mobile-viewport ui-overlay-c">
+    <div data-role="page">
+
+        <div data-role="header" data-theme="f" class="ui-header ui-bar-f" role="banner">
+            <div
+                class="ui-panel-content-wrap ui-body-c ui-panel-animate ui-panel-content-wrap-position-left ui-panel-content-wrap-display-reveal ui-panel-content-wrap-open header-content">
+                <!-- <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f ui-focus toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a> -->
+
+                <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext"
+                    class="ui-btn-left toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true"
+                    data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span
+                            class="ui-btn-text">
+                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;">
+                </a>
+
+                <img src="../assets/cart.png" class="header-cart" />
+                <!-- <img src="./Assets/logo.jpeg" class="logo" /> -->
+                <h1 class="title">Product Details</h1>
+            </div>
+        </div>
+
+        <div data-role="content">
+            <fieldset class="ui-grid-b my-breakpoint">
+                <div class="ui-block-a">
+                    <div style="float: right; padding-right: 2em;">
+                        <img src="../assets/heart.svg" style="width: 1.5em; height: 1.5em; padding-right: 0.5em;">
+                        <img src="../assets/share.svg" style="width: 1.5em; height: 1.5em;">
+                    </div>
+                    <br><br>
+                    <div>
+                        <center><img src="../assets/Cerelac.png" style="width: 15em; height: 17em;">
+                            <h2>Nestle CERELAC Infant Cereal, 250g Bag in Box Pack</h2>
+                            <p style="color: darkgray;">Availability: <em style="color:rgb(10, 175, 10);">On Demand</em>
+                            </p>
+                            <h2>Rs. 400.00</h2>
+
+                            <button id="relatedAddBtn" style="width: 15em;">ADD TO CART</button>
+                        </center>
+
+                        <br>
+                        <h3> Description </h3>
+                        <p>Iron is important for cognitive development
+                            Vitamin C enhances Iron absorption by the body.
+                            Zinc & Vitamin A are essential for good functioning of the immune system.
+                            Bifidus BL is a probiotic which may help reinforce baby’s immunity.</p>
+                        <p><b>Ingredients:</b>Skimmed Milk Powder (31%), Oat, Wheat Flour (22%), Sugar, Mixed Vegetable
+                            Oil.</p>
+                    </div>
+
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-body ui ui-body-d">
+                        <h3>Reviews of this product</h3>
+
+                        <input type="text" placeholder="Add New Review" id="newReview" />
+                        <button id="addReview" style="color: white; background-color: #31BB67;">Add Review</button>
+
+                        </br>
+                        <ul data-role="listview" id="reviewListview">
+                            <li>
+                                <h4>Geesara</h4>
+                                <p class="reviews" style="font-size: medium;"> Good packing & Fast delivery...!
+                                    Thank you Fresh Mart...! </p>
+                            </li>
+                            <li>
+                                <h4>Ravindu</h4>
+                                <p class="reviews" style="font-size: medium;">Received on time. Execellent service.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ui-body ui ui-body-d">
+                        <h3>Questions about this product</h3>
+
+                        <input type="text" placeholder="Enter your question(s) here" id="newQuestion" />
+                        <button id="askQuestion" style="color: white; background-color: #31BB67;">Ask Questions</button>
+
+                        </br>
+                        <ul data-role="listview" id="questionListview">
+                            <li>
+                                <h4>Ishara</h4>
+                                <p class="reviews" style="font-size: medium;">How long will it take to deliver?</p>
+                            </li>
+                            <li>
+                                <h4>Ravindu</h4>
+                                <p class="reviews" style="font-size: medium;">Delivery chargers?</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </fieldset>
+            <div>
+                <h2>Related Products</h2>
+                <table class="ui-responsive">
+                    <tbody>
+                        <tr>
+                            <th><img src="../assets/milkmade.png" style="width: 10em; height: 11em;"
+                                    onclick="location.href='productDetails.html';"></th>
+                            <th style="padding-left: 2em"><img src="../assets/milo.png" style="width: 10em; height: 12em;"
+                                    onclick="location.href='productDetailsC.html';"></th>
+                        </tr>
+                        <tr>
+                            <td>MILKMAID Sweetened Condensed Milk – 510g</td>
+                            <td style="padding-left: 2em">MILO Balls Breakfast 400g Tin</td>
+                        </tr>
+                        <tr>
+                            <th>Rs. 320.00</th>
+                            <th style="padding-left: 2em">Rs. 450.00</th>
+                        </tr>
+                        <tr>
+                            <td><button id="relatedAddBtn">ADD TO CART</button></td>
+                            <td style="padding: 0.7em"><button id="relatedAddBtn">ADD TO CART</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        $('#addReview').on('click', function () {
+            var amount_val = $('#newReview').val();
+            if (amount_val != '') {
+                $('#reviewListview').append('<li> <h4>Venura </h4> <p class="reviews" style="font-size: medium;">' + amount_val + '</p> </li>').listview('refresh');
+                $('#newReview').val('');
+            }
+        });
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
+        $('#askQuestion').on('click', function () {
+            var amount_val = $('#newQuestion').val();
+            if (amount_val != '') {
+                $('#questionListview').append('<li> <h4>Venura </h4> <p class="reviews" style="font-size: medium;">' + amount_val + '</p> </li>').listview('refresh');
+                $('#newQuestion').val('');
+            }
+        });
     </script>
-  </body>
+</body>
+
 </html>
