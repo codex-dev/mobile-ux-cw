@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/default.css" />
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        @media all and (max-width: 40em) {
+
+            .my-breakpoint .ui-block-a,
+            .my-breakpoint .ui-block-b,
+            .my-breakpoint .ui-block-c,
+            .my-breakpoint .ui-block-d,
+            .my-breakpoint .ui-block-e {
+                width: 100%;
+                float: none;
+            }
+        }
+
+        @media all and (min-width: 30em) {
+            .my-breakpoint.ui-grid-b .ui-block-a {
+                width: 60%;
+            }
+
+            .my-breakpoint.ui-grid-b .ui-block-b {
+                width: 40%;
+            }
+        }
+
+        .reviews {
+            color: rgb(55, 56, 56);
+        }
+
+        #relatedAddBtn {
+            background-color: #31BB67;
+            color: white;
+        }
+
+
+.success-box {
+  margin:50px 0;
+  padding:10px 10px;
+  border:1px solid #eee;
+  background:#f9f9f9;
+}
+
+.success-box img {
+  margin-right:10px;
+  display:inline-block;
+  vertical-align:top;
+}
+
+.success-box > div {
+  vertical-align:top;
+  display:inline-block;
+  color:#888;
+}
+
+
+
+/* Rating Star Widgets Style */
+.rating-stars ul {
+  list-style-type:none;
+  padding:0;
+  
+  -moz-user-select:none;
+  -webkit-user-select:none;
+}
+.rating-stars ul > li.star {
+  display:inline-block;
+  
+}
+
+/* Idle State of the stars */
+.rating-stars ul > li.star > i.fa {
+  font-size:2.5em; /* Change the size of the stars */
+  color:#ccc; /* Color on idle state */
+}
+
+/* Hover state of the stars */
+.rating-stars ul > li.star.hover > i.fa {
+  color:#FFCC36;
+}
+
+/* Selected state of the stars */
+.rating-stars ul > li.star.selected > i.fa {
+  color:#FF912C;
+}
+
+    </style>
+
+</head>
+
+<body class="ui-mobile-viewport ui-overlay-c">
+    <div data-role="page">
+
+        <div data-role="header" data-theme="f" class="ui-header ui-bar-f" role="banner">
+            <div
+                class="ui-panel-content-wrap ui-body-c ui-panel-animate ui-panel-content-wrap-position-left ui-panel-content-wrap-display-reveal ui-panel-content-wrap-open header-content">
+                <!-- <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f ui-focus toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a> -->
+
+                <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext"
+                    class="ui-btn-left toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true"
+                    data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span
+                            class="ui-btn-text">
+                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;" >
+                </a>
+
+                <img src="../assets/cart.png" class="header-cart" />
+                <!-- <img src="./Assets/logo.jpeg" class="logo" /> -->
+                <h1 class="title">Product Details</h1>
+            </div>
+        </div>
+
+        <div data-role="content">
+            <fieldset class="ui-grid-b my-breakpoint">
+                <div class="ui-block-a">
+                    <div style="float: right; padding-right: 2em;">
+                        <img src="../assets/heart.svg" style="width: 1.5em; height: 1.5em; padding-right: 0.5em;">
+                        <img src="../assets/share.svg" style="width: 1.5em; height: 1.5em;">
+                    </div>
+                    <br><br>
+                    <div>
+                        <center><img src="../assets/milkmade.png" style="width: 15em; height: 18em;">
+                            <h2>MILKMAID Sweetened Milk – 510g</h2>
+                            <p style="color: darkgray;">Availability: <em style="color:rgb(10, 175, 10);">On Demand</em>
+                            </p>
+                            <h2>Rs. 320.00</h2>
+
+                            <button id="relatedAddBtn" style="width: 15em;">ADD TO CART</button>
+                        </center>
+
+                        <br>
+                        <h3> Description </h3>
+                        <h4> Create sweet moments of indulgences with MILKMAID! </h4>
+                        <p>MILKMAID has been a household favorite in Sri Lanka for over 100 years and is synonymous with
+                            mouthwatering desserts. It is made with Sri Lanka’s finest fresh milk.</p>
+                        <p><b>Ingredients:</b>Milk, Sugar, Skimmed Milk Powder.</p>
+                    </div>
+
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-body ui ui-body-d">
+                        <h3>Reviews of this product</h3>
+
+                        <input type="text" placeholder="Add New Review" id="newReview" />
+                        <button id="addReview" style="color: white; background-color: #31BB67;">Add Review</button>
+
+                        </br>
+                        <ul data-role="listview" id="reviewListview">
+                            <li>
+                                <h4>Geesara</h4>
+                                <p class="reviews" style="font-size: medium;"> Good packing & Fast delivery...!
+                                    Thank you Fresh Mart...! </p>
+                            </li>
+                            <li>
+                                <h4>Ravindu</h4>
+                                <p class="reviews" style="font-size: medium;">Received on time. Execellent service.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ui-body ui ui-body-d">
+                        <h3>Questions about this product</h3>
+
+                        <input type="text" placeholder="Enter your question(s) here" id="newQuestion" />
+                        <button id="askQuestion" style="color: white; background-color: #31BB67;">Ask Questions</button>
+
+                        </br>
+                        <ul data-role="listview" id="questionListview">
+                            <li>
+                                <h4>Ishara</h4>
+                                <p class="reviews" style="font-size: medium;">How long will it take to deliver?</p>
+                            </li>
+                            <li>
+                                <h4>Ravindu</h4>
+                                <p class="reviews" style="font-size: medium;">Delivery chargers?</p>
+                            </li>
+                        </ul>
+                        <section class='rating-widget'>
+                            <br>
+                            <h3>Rate the product</h3>
+                            <!-- Rating Stars Box -->
+                            <div class='rating-stars text-center'>
+                              <ul id='stars'>
+                                <li class='star' title='Poor' data-value='1'>
+                                  <i class='fa fa-star fa-fw'></i>
+                                </li>
+                                <li class='star' title='Fair' data-value='2'>
+                                  <i class='fa fa-star fa-fw'></i>
+                                </li>
+                                <li class='star' title='Good' data-value='3'>
+                                  <i class='fa fa-star fa-fw'></i>
+                                </li>
+                                <li class='star' title='Excellent' data-value='4'>
+                                  <i class='fa fa-star fa-fw'></i>
+                                </li>
+                                <li class='star' title='WOW!!!' data-value='5'>
+                                  <i class='fa fa-star fa-fw'></i>
+                                </li>
+                              </ul>
+                            </div>
+                            
+                            <div class='success-box'>
+                              <div class='clearfix'></div>
+                              
+                              <div class='text-message'></div>
+                              <div class='clearfix'></div>
+                            </div>
+                            
+                            
+                            
+                          </section>
+                          
+                    </div>
+                </div>
+            </fieldset>
+            <div>
+                <h2>Related Products</h2>
+                <table class="ui-responsive">
+                    <tbody>
+                        <tr>
+                            <th><img src="../assets/Cerelac.png" style="width: 10em; height: 10em;"
+                                    onclick="location.href='productDetailsB.html';"></th>
+                            <th style="padding-left: 2em"><img src="../assets/milo.png" style="width: 10em; height: 12em;"
+                                    onclick="location.href='productDetailsC.html';"></th>
+                        </tr>
+                        <tr>
+                            <td>Nestle CERELAC Infant Ceralac..</td>
+                            <td style="padding-left: 2em">MILO Balls Breakfast 400g Tin</td>
+                        </tr>
+                        <tr>
+                            <th>Rs. 400.00</th>
+                            <th style="padding-left: 2em">Rs. 450.00</th>
+                        </tr>
+                        <tr>
+                            <td><button id="relatedAddBtn">ADD TO CART</button></td>
+                            <td style="padding: 0.7em"><button id="relatedAddBtn">ADD TO CART</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#addReview').on('click', function () {
+            var amount_val = $('#newReview').val();
+            if (amount_val != '') {
+                $('#reviewListview').append('<li> <h4>Venura </h4> <p class="reviews" style="font-size: medium;">' + amount_val + '</p> </li>').listview('refresh');
+                $('#newReview').val('');
+            }
+        });
+
+        $('#askQuestion').on('click', function () {
+            var amount_val = $('#newQuestion').val();
+            if (amount_val != '') {
+                $('#questionListview').append('<li> <h4>Venura </h4> <p class="reviews" style="font-size: medium;">' + amount_val + '</p> </li>').listview('refresh');
+                $('#newQuestion').val('');
+            }
+        });
+
+        $(document).ready(function(){
+  
+  /* 1. Visualizing things on Hover - See next part for action on click */
+  $('#stars li').on('mouseover', function(){
+    var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+   
+    // Now highlight all the stars that's not after the current hovered star
+    $(this).parent().children('li.star').each(function(e){
+      if (e < onStar) {
+        $(this).addClass('hover');
+      }
+      else {
+        $(this).removeClass('hover');
+      }
+    });
+    
+  }).on('mouseout', function(){
+    $(this).parent().children('li.star').each(function(e){
+      $(this).removeClass('hover');
+    });
+  });
+  
+  
+  /* 2. Action to perform on click */
+  $('#stars li').on('click', function(){
+    var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+    var stars = $(this).parent().children('li.star');
+    
+    for (i = 0; i < stars.length; i++) {
+      $(stars[i]).removeClass('selected');
+    }
+    
+    for (i = 0; i < onStar; i++) {
+      $(stars[i]).addClass('selected');
+    }
+    
+    // JUST RESPONSE (Not needed)
+    var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+    var msg = "";
+    if (ratingValue > 1) {
+        msg = "Thanks! You rated this " + ratingValue + " stars.";
+    }
+    else {
+        msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+    }
+    responseMessage(msg);
+    
+  });
+  
+  
+});
+
+
+function responseMessage(msg) {
+  $('.success-box').fadeIn(200);  
+  $('.success-box div.text-message').html("<span>" + msg + "</span>");
+}
+    </script>
+</body>
+
+</html>
