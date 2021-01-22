@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/default.css" />
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        @media all and (max-width: 40em) {
+
+            .my-breakpoint .ui-block-a,
+            .my-breakpoint .ui-block-b,
+            .my-breakpoint .ui-block-c,
+            .my-breakpoint .ui-block-d,
+            .my-breakpoint .ui-block-e {
+                width: 100%;
+                float: none;
+            }
+        }
+
+        @media all and (min-width: 30em) {
+            .my-breakpoint.ui-grid-b .ui-block-a {
+                width: 60%;
+            }
+
+            .my-breakpoint.ui-grid-b .ui-block-b {
+                width: 40%;
+            }
+        }
+
+        .reviews {
+            color: rgb(55, 56, 56);
+        }
+
+        #relatedAddBtn {
+            background-color: #31BB67;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body class="ui-mobile-viewport ui-overlay-c">
+    <div data-role="page">
+
+        <div data-role="header" data-theme="f" class="ui-header ui-bar-f" role="banner">
+            <div
+                class="ui-panel-content-wrap ui-body-c ui-panel-animate ui-panel-content-wrap-position-left ui-panel-content-wrap-display-reveal ui-panel-content-wrap-open header-content">
+                <!-- <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f ui-focus toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a> -->
+
+                <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext"
+                    class="ui-btn-left toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true"
+                    data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span
+                            class="ui-btn-text">
+                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;" >
+                </a>
+
+                <img src="../assets/cart.png" class="header-cart" />
+                <!-- <img src="./Assets/logo.jpeg" class="logo" /> -->
+                <h1 class="title">Product Details</h1>
+            </div>
+        </div>
+
+        <div data-role="content">
+            <fieldset class="ui-grid-b my-breakpoint">
+                <div class="ui-block-a">
+                    <div class="ui-body ui ui-body-d">
+                        <h3>Order Confirmation</h3>
+                        
+
+                        </br>
+                        <ul data-role="listview" id="reviewListview">
+                            <li>
+                                <table>
+                                    <tr>
+                                        <td>Delivery Information</td>
+                                        <td><button style="color: white; background-color: #31BB67;">Change</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>John Doe</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>12th Street,Mountain</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>0117894561232</td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <td>Payment Information</td>
+                                        <td><button style="color: white; background-color: #31BB67;">Change</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fa fa-cc-visa" style="color:navy;">**** **** **** 0000</i></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fa fa-cc-mastercard" style="color:red;">**** **** **** 0000</i></td>
+                                        <td>&nbsp;&nbsp;&nbsp;<i class="fa fa-check-circle"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fa fa-cc-amex" style="color:blue;">**** **** **** 0000</i></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cash On Delivery</td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-body ui ui-body-d">
+                        <h3>Order Summary</h3>
+                        
+
+                        </br>
+                        <ul data-role="listview" id="reviewListview">
+                            <li>
+                                <table>
+                                    <tr>
+                                        <td>Sub Total</td>
+                                        <td>&nbsp;&nbsp;&nbsp;Rs. 680.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Delivery Charges</td>
+                                        <td>&nbsp;&nbsp;&nbsp;Rs. 99.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Coupon Code</td>
+                                        <td>&nbsp;&nbsp;&nbsp;WQEWRRW</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Total</b></td>
+                                        <td>&nbsp;&nbsp;&nbsp;Rs. 679.00</td>
+                                    </tr>
+                                </table>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="ui-body ui ui-body-d">
+                        <button id="addReview" onclick="location.href='productDetailsD.html';" style="color: white; background-color: #31BB67;">Place Order</button>
+                    </div>
+                </div>
+            </fieldset>
+            
+        </div>
+    </div>
+
+    <script>
+        $('#addReview').on('click', function () {
+            var amount_val = $('#newReview').val();
+            if (amount_val != '') {
+                $('#reviewListview').append('<li> <h4>Venura </h4> <p class="reviews" style="font-size: medium;">' + amount_val + '</p> </li>').listview('refresh');
+                $('#newReview').val('');
+            }
+        });
+
+        $('#askQuestion').on('click', function () {
+            var amount_val = $('#newQuestion').val();
+            if (amount_val != '') {
+                $('#questionListview').append('<li> <h4>Venura </h4> <p class="reviews" style="font-size: medium;">' + amount_val + '</p> </li>').listview('refresh');
+                $('#newQuestion').val('');
+            }
+        });
+    </script>
+</body>
+
+</html>
