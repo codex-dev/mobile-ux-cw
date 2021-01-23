@@ -15,7 +15,6 @@
 
     <style>
         @media all and (max-width: 40em) {
-
             .my-breakpoint .ui-block-a,
             .my-breakpoint .ui-block-b,
             .my-breakpoint .ui-block-c,
@@ -134,7 +133,7 @@
 
                 </a>
 
-                <img src="../assets/cart.png" class="header-cart" onclick="location.href='mycartview.html';" />
+                <img src="../assets/cart.png" class="header-cart" onclick="location.href='cart.html';" />
                 <!-- <img src="./Assets/logo.jpeg" class="logo" /> -->
                 <h3 class="title">Product Details</h3>
             </div>
@@ -160,7 +159,7 @@
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star"></span>
-                            <button id="relatedAddBtn" onclick="location.href='mycartview.html';"
+                            <button id="relatedAddBtn" onclick="location.href='cart.html';"
                                 style="width: 15em;">ADD TO CART</button>
                         </center>
 
@@ -191,7 +190,7 @@
                                 <h4>Ravindu</h4>
                                 <p class="reviews" style="font-size: medium;">Received on time. Execellent service.</p>
                             </li>
-                            <li></li>
+                           
                         </ul>
                     </div>
 
@@ -223,8 +222,7 @@
                                     <div id="answer"></div>
                                 </div>
                             </li>
-                            <li>
-                            </li>
+                          
                         </ul>
                         <section class='rating-widget'>
                             <br>
@@ -309,7 +307,7 @@
             }
         });
 
-        D
+        
         $('#relatedAddBtn').on('click', function () {
             var imgSrc = document.getElementById("productImg").src;
             var title = document.getElementById("productTitle").innerText;
