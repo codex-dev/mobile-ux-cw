@@ -35,22 +35,68 @@
         placeholder="Search Wishlist" />
     </header>
 
-    <!-- <div class="ui-content">
-      <h2>Page 1 show the weekly task items</h2>
+    <div class="ui-content">
+      <h2>Wish List</h2>
       <ul data-role="listview" data-filter="true" data-filter-placeholder="Filter" item="true">
         <li data-role="list-divider">Monday list items</li>
-        <li><a href="#">Item 1</a></li>
-        <li><a href="#">Item 2 </a></li>
-        <li><a href="#">Item 3 </a></li>
-        <li data-role="list-divider">Tuesday list items</li>
+        <li id="demo1"><a href="#">Item 1
+
+          <div class="card">
+            <i class="fa fa-trash" onclick="delete1()"></i>
+            <img src="../assets/milkmade.png" style="max-width:60%">
+            <div class="container" onclick="location.href='productDetails.html';">
+              <h4><b>MILKMAID Sweetened– 510g</b></h4>
+              <div class="price">
+                <h5>Rs. 450</h5>
+                <h4 style="padding-left: 1em;">Rs. 320/=</h4>
+              </div>
+            </div>
+            
+          </div>
+
+        </a></li>
+        <li id="demo2"><a href="#">Item 2 
+
+          <div class="card">
+            <i class="fa fa-trash" onclick="delete2()"></i>
+            <div style="padding-top: 0.5em;">
+              <img src="../assets/Cerelac.png" style="max-width:60%">
+            </div>
+            <div class="container" onclick="location.href='productDetailsB.html';"><br>
+              <h4><b>Nestle Infant CERELAC - 250g</b></h4>
+              <div class="price">
+                <h5>Rs. 450</h5>
+                <h4 style="padding-left: 1em;">Rs. 320/=</h4>
+              </div>
+            </div>
+            
+          </div>
+
+        </a></li>
+        <li><a href="#">Item 3 
+
+          <div class="card">
+            <i class="fa fa-trash" onclick="delete2()"></i>
+            <img src="../assets/milkmade.png" style="width:60%">
+            <div class="container" onclick="location.href='productDetails.html';">
+              <h4><b>MILKMAID Sweetened– 510g</b></h4>
+              <div class="price">
+                <h5>Rs. 450</h5>
+                <h4 style="padding-left: 1em;">Rs. 320/=</h4>
+              </div>
+            </div>
+            
+          </div>
+        </a></li>
+        <!--<li data-role="list-divider">Tuesday list items</li>
         <li><a href="#">Item 1 </a></li>
         <li><a href="#">Item 2 </a></li>
-        <li><a href="#">Item 3 </a></li>
+        <li><a href="#">Item 3 </a></li>-->
       </ul>
-    </div> -->
+    </div>
 
     <div style="display: flex;">
-
+      <!--
       <div id="demo1" class="card">
         <i class="fa fa-trash" onclick="delete1()"></i>
         <img src="../assets/milkmade.png" style="max-width:60%">
@@ -78,10 +124,11 @@
         </div>
         
       </div>
+      -->
     </div>
 
     <div style="display: flex;">
-
+      <!--
       <div class="card">
         <i class="fa fa-trash" onclick="delete2()"></i>
         <img src="../assets/milkmade.png" style="width:60%">
@@ -100,7 +147,7 @@
         <div style="padding-top: 0.5em;">
           <img src="../assets/Cerelac.png" style="width:60%">
         </div>
-        <div class="container" onclick="location.href='productDetailsB.html';">
+        <div class="container" onclick="location.href='productDetailsB.html';"><br>
           <h4><b>Nestle Infant CERELAC - 250g</b></h4>
           <div class="price">
             <h5>Rs. 450</h5>
@@ -108,6 +155,7 @@
           </div>
         </div>
       </div>
+      -->
     </div>
 
     <footer data-role="footer" data-position="fixed">
