@@ -183,6 +183,20 @@
                 $('#newQuestion').val('');
             }
         });
+
+        $('#relatedAddBtn').on('click', function(){
+            var imgSrc = document.getElementById("productImg").src;
+            var title = document.getElementById("productTitle").innerText;
+            var price = document.getElementById("productPrice").innerText;
+
+            // console.log('productImgSrc is : '+imgSrc); 
+            // console.log('productTitle is : '+title); 
+            // console.log('productPrice : '+price); 
+
+            window.localStorage.setItem("productImgSrc", imgSrc);
+            window.localStorage.setItem("productTitle", title);
+            window.localStorage.setItem("productPrice", price);
+        });
     </script>
 </body>
 

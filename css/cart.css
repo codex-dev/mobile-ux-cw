@@ -14,6 +14,28 @@
 
 }
 
+.items{
+	display: flex;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+	background-color: #FFFFFF;
+	margin: 5px;
+	border-radius: 8px;
+	transition: width 4s ease-in-out;
+	padding: 4px;
+	width: 380px;
+	}
+
+
+ .itemImage{
+	padding-top: 15px;
+ 	padding-right:10px;
+ 	display: flex;
+    transition: width 1s ease-in-out;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction:row;
+	}
+
 .buttonCheck {
     background:  #31BB67;
     padding: 15px;
