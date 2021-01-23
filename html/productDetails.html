@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
@@ -50,6 +51,10 @@
             color: darkgrey;
             margin-right: 1em;
         }
+
+        #answer {
+            margin-left: 2em;
+        }
     </style>
 
 </head>
@@ -66,7 +71,7 @@
                     class="ui-btn-left toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true"
                     data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span
                             class="ui-btn-text">
-                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;">
+                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;" onclick="location.href='home_ui.html#secondpage';">
                 </a>
 
                 <img src="../assets/cart.png" class="header-cart" />
@@ -137,7 +142,7 @@
                                 <p class="reviews" style="font-size: medium;">How long will it take to deliver?</p>
                                 <p id="replyButton">Reply</p>
                                 <div style="display: flex;">
-                                    <input type="text" id="textboxDiv"/>
+                                    <input type="text" id="textboxDiv" style="display: none;"/>
                                     <div id="reply"></div>
                                     <div id="answer"></div>
                                 </div>
@@ -147,8 +152,9 @@
                                 <p class="reviews" style="font-size: medium;">Delivery chargers?</p>
                                 <p id="replyButton">Reply</p>
                                 <div style="display: flex;">
-                                    <div id="textboxDiv"></div>
+                                    <input type="text" id="textboxDiv" style="display: none;"/>
                                     <div id="reply"></div>
+                                    <div id="answer"></div>
                                 </div>
                             </li>
                             <li>
@@ -206,15 +212,15 @@
 
         $("#replyButton").on("click", function () {
             $("#replyButton").hide();
+            $("#textboxDiv").show();
             $("#textboxDiv").append("<div><input type='text'/></div>");
-            $("#reply").append("<button>Reply</button>")
+            $("#reply").append('&nbsp;&nbsp;&nbsp;<button style="background-color: #31BB67; color: white;  margin-top: 1em;">Reply</button>');
 
         });
 
         $("#reply").on("click", function () {
 
             $("#reply").hide();
-
             var replyText = $('#textboxDiv').val();
             console.log("replyText",replyText)
             $("#answer").append('<h4>Venura </h4><p>'+ replyText + '</p>');
@@ -224,6 +230,11 @@
 
     </script>
     <script src="../js/addToCart.js"></script>
+    <!-- <style>
+        reply{
+            margin-top: ;
+        }
+    </style> -->
 </body>
 
 </html>

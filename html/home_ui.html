@@ -10,19 +10,22 @@
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="../css/home.css" />
   <link rel="stylesheet" href="../css/homeSlider.css" type="text/css" />
+  <link rel="stylesheet" href="../css/default.css" />
+
 
   <script type="text/javascript" src="../js/homeSlider.js"></script>
- 
+
 </head>
 
 <body>
   <!-- This is the first page -->
   <section id="firstpage" data-role="page">
     <header data-role="header" data-position="fixed" style="background-color:#31BB67;">
-      <h1>Wishlist</h1>
+      <h1 class="title">Wishlist</h1>
       <a href="#" class="ui-btn-left ui-btn ui-icon-user ui-btn-icon-notext ui-shadow ui-corner-all"
         data-role="button"></a>
       <a href="../html/cart.html" class="ui-btn-right ui-btn ui-icon-bullets ui-btn-icon-notext ui-shadow ui-corner-all"
@@ -31,7 +34,7 @@
       <input type="search" name="search-mini" id="search-mini" value="" data-mini="false"
         placeholder="Search Wishlist" />
     </header>
-    
+
     <!-- <div class="ui-content">
       <h2>Page 1 show the weekly task items</h2>
       <ul data-role="listview" data-filter="true" data-filter-placeholder="Filter" item="true">
@@ -62,7 +65,7 @@
 
   <section id="secondpage" data-role="page">
     <header data-role="header" data-position="fixed" style="background-color:#31BB67;">
-      <h1>Fresh Mart</h1>
+      <h1 class="title">Fresh Mart</h1>
       <a href="#" class="ui-btn-left ui-btn ui-icon-user ui-btn-icon-notext ui-shadow ui-corner-all"
         data-role="button"></a>
       <a href="../html/cart.html" class="ui-btn-right ui-btn ui-icon-bullets ui-btn-icon-notext ui-shadow ui-corner-all"
@@ -87,7 +90,7 @@
       </div>
 
     </div>
-    
+
     <script>
       $('#games').coinslider();
     </script>
@@ -167,7 +170,7 @@
 
   <section id="thirdpage" data-role="page">
     <header data-role="header" data-position="fixed" style="background-color:#31BB67;">
-      <h1>My Orders</h1>
+      <h1 class="title">My Orders</h1>
       <a href="#" class="ui-btn-left ui-btn ui-icon-user ui-btn-icon-notext ui-shadow ui-corner-all"
         data-role="button"></a>
       <a href="../html/cart.html" class="ui-btn-right ui-btn ui-icon-bullets ui-btn-icon-notext ui-shadow ui-corner-all"
@@ -176,19 +179,151 @@
       <input type="search" name="search-mini" id="search-mini" value="" data-mini="false"
         placeholder="Search My Orders" />
     </header>
-    <!-- <div class="ui-content">
-      <h2>Page 1 show the weekly task items</h2>
-      <ul data-role="listview" data-filter="true" data-filter-placeholder="Filter" item="true">
-        <li data-role="list-divider">Monday list items</li>
-        <li><a href="#">Item 1</a></li>
-        <li><a href="#">Item 2 </a></li>
-        <li><a href="#">Item 3 </a></li>
-        <li data-role="list-divider">Tuesday list items</li>
-        <li><a href="#">Item 1 </a></li>
-        <li><a href="#">Item 2 </a></li>
-        <li><a href="#">Item 3 </a></li>
-      </ul>
-    </div> -->
+    <div data-role="content">
+      <fieldset class="ui-grid-b my-breakpoint">
+        <div class="ui-block-a">
+          <div class="ui-body ui ui-body-d">
+            <ul data-role="listview" id="reviewListview">
+              <li>
+                <table>
+                  <tr>
+                    <td><b>Order Reference No : 123456</b></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-calendar"></i>&nbsp;&nbsp;&nbsp;2021-01-01</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-map"></i>&nbsp;&nbsp;&nbsp;12th Streen,Mount Elizabeth</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-money"></i>&nbsp;&nbsp;&nbsp;Rs. 1199.00</td>
+                    <td>&nbsp;&nbsp;&nbsp;<button onclick="location.href='orderHistory.html';"
+                        style="color: white; background-color: #31BB67;">View</button></td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+
+            <ul data-role="listview" id="reviewListview">
+              <li>
+                <table>
+                  <tr>
+                    <td><b>Order Reference No : 123456</b></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-calendar"></i>&nbsp;&nbsp;&nbsp;2021-01-01</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-map"></i>&nbsp;&nbsp;&nbsp;12th Streen,Mount Elizabeth</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-money"></i>&nbsp;&nbsp;&nbsp;Rs. 5400.00</td>
+                    <td>&nbsp;&nbsp;&nbsp;<button onclick="location.href='orderHistory.html';"
+                        style="color: white; background-color: #31BB67;">View</button></td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+
+            <ul data-role="listview" id="reviewListview">
+              <li>
+                <table>
+                  <tr>
+                    <td><b>Order Reference No : 123456</b></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-calendar"></i>&nbsp;&nbsp;&nbsp;2021-01-01</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-map"></i>&nbsp;&nbsp;&nbsp;12th Streen,Mount Elizabeth</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-money"></i>&nbsp;&nbsp;&nbsp;Rs. 5400.00</td>
+                    <td>&nbsp;&nbsp;&nbsp;<button onclick="location.href='orderHistory.html';"
+                        style="color: white; background-color: #31BB67;">View</button></td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+        <div class="ui-block-b">
+          <div class="ui-body ui ui-body-d">
+            <ul data-role="listview" id="reviewListview">
+              <li>
+                <table>
+                  <tr>
+                    <td><b>Order Reference No : 123456</b></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-calendar"></i>&nbsp;&nbsp;&nbsp;2021-01-01</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-map"></i>&nbsp;&nbsp;&nbsp;12th Streen,Mount Elizabeth</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-money"></i>&nbsp;&nbsp;&nbsp;Rs. 5400.00</td>
+                    <td><button onclick="location.href='orderHistory.html';"
+                        style="color: white; background-color: #31BB67;">View</button></td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+
+          </div>
+
+
+        </div>
+      </fieldset>
+
+    </div>
+
+    <style>
+      @media all and (max-width: 40em) {
+
+        .my-breakpoint .ui-block-a,
+        .my-breakpoint .ui-block-b,
+        .my-breakpoint .ui-block-c,
+        .my-breakpoint .ui-block-d,
+        .my-breakpoint .ui-block-e {
+          width: 100%;
+          float: none;
+        }
+      }
+
+      @media all and (min-width: 30em) {
+        .my-breakpoint.ui-grid-b .ui-block-a {
+          width: 50%;
+        }
+
+        .my-breakpoint.ui-grid-b .ui-block-b {
+          width: 50%;
+        }
+      }
+
+      .reviews {
+        color: rgb(55, 56, 56);
+      }
+
+      #relatedAddBtn {
+        background-color: #31BB67;
+        color: white;
+      }
+    </style>
     <footer data-role="footer" data-position="fixed">
       <nav data-role="navbar">
         <ul>
