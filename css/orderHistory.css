@@ -23,8 +23,6 @@ h1 {
 
 #qr-canvas {
   margin: auto;
-  /* padding-right: 1em; */
-  /* width: calc(100% - 20px); */
   width: 400px;
   max-width: 400px;
 }
@@ -49,5 +47,4 @@ h1 {
   /* margin: 20px auto; */
   padding-bottom: 2em;
   max-width: 700px;
-  /* background-color: white; */
 }

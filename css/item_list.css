@@ -1,0 +1,164 @@
+
+.container{
+	width: 100%;
+	display: flex;
+	overflow-x: auto;
+	justify-content: center;
+
+	}
+
+
+
+.itemList, .favourite_itemList, .offer_list{
+	display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction:column ;
+    margin-top: 10px;
+    min-width: 100px;
+    font-family: 'IBM Plex Sans';
+    transition: width 4s ease-in-out;
+    padding-bottom: 80px;
+	
+	}
+
+
+.items{
+	display: flex;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+	background-color: #FFFFFF;
+	margin: 5px;
+	border-radius: 8px;
+	transition: width 4s ease-in-out;
+	padding: 4px;
+	width: 380px;
+	}
+
+
+ .itemImage{
+	padding-top: 15px;
+ 	padding-right:10px;
+ 	display: flex;
+    transition: width 1s ease-in-out;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction:row;
+	}
+
+
+  ul{
+  list-style-type: none;
+   padding-left: 0pt;
+	}
+
+  a{
+	text-decoration: none;
+	color: black;
+	}
+
+  p{
+	line-height: 18px;
+	}
+
+.favorite{
+	display: flex;
+	flex-direction: row;
+	right: 0;
+	/* font-size: 100px; */
+}
+  .rating{
+	color: rgb(231, 155, 14);
+	}
+
+	.favorite_False{
+		color: 	#cecece!important;
+	}
+
+	.favorite_True{
+		color: rgb(248, 107, 107) !important;
+
+	}
+
+	.cartBtn{
+		/* background-color: #092C4C; */
+		color: #092C4C ;
+	}
+
+	#displayToast{
+		color: white;
+		border-radius: 8px;
+		height: 30px;
+		justify-content: center;
+		/* border: red;
+		text-align: middle; */
+	}
+
+
+
+/* On screens that are 414 - 1023 or less, set the background color to blue */
+@media screen and (min-width: 25.8em) {
+  .itemList, .favourite_itemList, .offer_list{
+  	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	}
+
+
+  .items{
+  	color: black;
+	   flex: 0 0 60%;
+	   text-decoration: none;
+	}
+
+  .itemImage{
+ 	height: 180px;
+ 	width: 160px;
+	 }
+
+  .favorite{
+	/* display: flex; */
+	font-size: 25px !important;
+	padding-left: 126px
+
+	}
+
+  .rating{
+	font-size: 20px !important;
+	}
+
+	#displayToast{
+		margin-left: 720px;
+		margin-top: 580px;
+		width: 250px;	
+	}
+}
+
+/* On screens that are 1024px or more */
+@media screen and (max-width: 63.9em) {
+ .itemList {
+	flex-direction: column;
+	}
+
+ .itemImage{
+ 	height: 160px;
+ 	width: 130px;
+	}
+
+ .favorite{
+	font-size: 22px !important;
+	padding-left: 155px;
+	}
+ 
+ .rating{
+	font-size: 20px !important;
+ }
+
+ #displayToast{
+	width: 180px;
+	margin-left: 180px;
+	margin-top: 700px;		
+	font-size: 13px;
+	}
+
+}

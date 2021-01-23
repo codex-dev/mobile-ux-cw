@@ -112,7 +112,7 @@
                     class="ui-btn-left toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true"
                     data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span
                             class="ui-btn-text">
-                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;" >
+                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;" onclick="location.href='home_ui.html#secondpage';" >
                 </a>
 
                 <img src="../assets/cart.png" class="header-cart" onclick="location.href='mycartview.html';" />
@@ -127,7 +127,9 @@
                     <div style="float: right; padding-right: 2em;">
                         <img src="../assets/heart.svg" style="width: 1.5em; height: 1.5em; padding-right: 0.5em;">
                         <img src="../assets/share.svg" style="width: 1.5em; height: 1.5em;">
+                        <button>♡</button>
                     </div>
+                    
                     <br><br>
                     <div>
                         <center><img src="../assets/milkmade.png" style="width: 15em; height: 18em;">
@@ -275,6 +277,20 @@
         });
 
         $(document).ready(function(){
+
+          const whiteHeart = '\u2661';
+          const blackHeart = '\u2665';
+          const button = document.querySelector('button');
+          button.addEventListener('click', toggle);
+
+          function toggle() {
+            const like = button.textContent;
+            if(like==whiteHeart) {
+              button.textContent = blackHeart;
+            } else {
+              button.textContent = whiteHeart;
+            }
+          }
   
   /* 1. Visualizing things on Hover - See next part for action on click */
   $('#stars li').on('mouseover', function(){

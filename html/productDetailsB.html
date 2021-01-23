@@ -56,7 +56,7 @@
                     class="ui-btn-left toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true"
                     data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span
                             class="ui-btn-text">
-                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;">
+                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;" onclick="location.href='home_ui.html#secondpage';">
                 </a>
 
                 <img src="../assets/cart.png" class="header-cart" />
@@ -178,6 +178,20 @@
                 $('#questionListview').append('<li> <h4>Venura </h4> <p class="reviews" style="font-size: medium;">' + amount_val + '</p> </li>').listview('refresh');
                 $('#newQuestion').val('');
             }
+        });
+
+        $('#relatedAddBtn').on('click', function(){
+            var imgSrc = document.getElementById("productImg").src;
+            var title = document.getElementById("productTitle").innerText;
+            var price = document.getElementById("productPrice").innerText;
+
+            // console.log('productImgSrc is : '+imgSrc); 
+            // console.log('productTitle is : '+title); 
+            // console.log('productPrice : '+price); 
+
+            window.localStorage.setItem("productImgSrc", imgSrc);
+            window.localStorage.setItem("productTitle", title);
+            window.localStorage.setItem("productPrice", price);
         });
     </script>
 </body>

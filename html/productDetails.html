@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
 
     <style>
         @media all and (max-width: 40em) {
@@ -36,12 +40,80 @@
             color: rgb(55, 56, 56);
         }
 
+
         #relatedAddBtn {
             background-color: #31BB67;
             color: white;
         }
-    </style>
 
+        #replyButton {
+            text-align: right;
+            color: darkgrey;
+            margin-right: 1em;
+        }
+
+        #answer {
+            margin-left: 2em;
+            color: darkgrey;
+        }
+
+        .success-box {
+            margin: 50px 0;
+            padding: 10px 10px;
+            border: 1px solid #eee;
+            background: #f9f9f9;
+        }
+
+        .success-box img {
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .success-box>div {
+            vertical-align: top;
+            display: inline-block;
+            color: #888;
+        }
+
+
+
+        /* Rating Star Widgets Style */
+        .rating-stars ul {
+            list-style-type: none;
+            padding: 0;
+
+            -moz-user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .rating-stars ul>li.star {
+            display: inline-block;
+
+        }
+
+        /* Idle State of the stars */
+        .rating-stars ul>li.star>i.fa {
+            font-size: 2.5em;
+            /* Change the size of the stars */
+            color: #ccc;
+            /* Color on idle state */
+        }
+
+        /* Hover state of the stars */
+        .rating-stars ul>li.star.hover>i.fa {
+            color: #FFCC36;
+        }
+
+        /* Selected state of the stars */
+        .rating-stars ul>li.star.selected>i.fa {
+            color: #FF912C;
+        }
+
+        .checked {
+            color: orange;
+        }
+    </style>
 </head>
 
 <body class="ui-mobile-viewport ui-overlay-c">
@@ -56,12 +128,15 @@
                     class="ui-btn-left toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true"
                     data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span
                             class="ui-btn-text">
-                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;" >
+
+                            <img src="../assets/back.png" width="30" height="30" style="margin-top: 1.5em;"
+                                onclick="location.href='home_ui.html#secondpage';">
+
                 </a>
 
-                <img src="../assets/cart.png" class="header-cart" />
+                <img src="../assets/cart.png" class="header-cart" onclick="location.href='mycartview.html';" />
                 <!-- <img src="./Assets/logo.jpeg" class="logo" /> -->
-                <h1 class="title">Product Details</h1>
+                <h3 class="title">Product Details</h3>
             </div>
         </div>
 
@@ -69,18 +144,24 @@
             <fieldset class="ui-grid-b my-breakpoint">
                 <div class="ui-block-a">
                     <div style="float: right; padding-right: 2em;">
-                        <img src="../assets/heart.svg" style="width: 1.5em; height: 1.5em; padding-right: 0.5em;">
+                        <!--<img src="../assets/heart.svg" style="width: 1.5em; height: 1.5em; padding-right: 0.5em;">-->
                         <img src="../assets/share.svg" style="width: 1.5em; height: 1.5em;">
+                        <button>♡</button>
                     </div>
                     <br><br>
                     <div>
-                        <center><img src="../assets/milkmade.png" style="width: 15em; height: 18em;">
-                            <h2>MILKMAID Sweetened Milk – 510g</h2>
+                        <center><img src="../assets/milkmade.png" style="width: 15em; height: 18em;" id="productImg">
+                            <h2 id="productTitle">MILKMAID Sweetened Milk – 510g</h2>
                             <p style="color: darkgray;">Availability: <em style="color:rgb(10, 175, 10);">On Demand</em>
                             </p>
                             <h2>Rs. 320.00</h2>
-
-                            <button id="relatedAddBtn" style="width: 15em;">ADD TO CART</button>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <button id="relatedAddBtn" onclick="location.href='mycartview.html';"
+                                style="width: 15em;">ADD TO CART</button>
                         </center>
 
                         <br>
@@ -110,6 +191,7 @@
                                 <h4>Ravindu</h4>
                                 <p class="reviews" style="font-size: medium;">Received on time. Execellent service.</p>
                             </li>
+                            <li></li>
                         </ul>
                     </div>
 
@@ -124,12 +206,60 @@
                             <li>
                                 <h4>Ishara</h4>
                                 <p class="reviews" style="font-size: medium;">How long will it take to deliver?</p>
+                                <p id="replyButton">Reply</p>
+                                <div style="display: flex;">
+                                    <input type="text" id="textboxDiv" style="display: none;" />
+                                    <div id="reply"></div>
+                                    <div id="answer"></div>
+                                </div>
                             </li>
                             <li>
                                 <h4>Ravindu</h4>
                                 <p class="reviews" style="font-size: medium;">Delivery chargers?</p>
+                                <p id="replyButton">Reply</p>
+                                <div style="display: flex;">
+                                    <input type="text" id="textboxDiv" style="display: none;" />
+                                    <div id="reply"></div>
+                                    <div id="answer"></div>
+                                </div>
+                            </li>
+                            <li>
                             </li>
                         </ul>
+                        <section class='rating-widget'>
+                            <br>
+                            <h3>Rate the product</h3>
+                            <!-- Rating Stars Box -->
+                            <div class='rating-stars text-center'>
+                                <ul id='stars'>
+                                    <li class='star' title='Poor' data-value='1'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                    <li class='star' title='Fair' data-value='2'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                    <li class='star' title='Good' data-value='3'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                    <li class='star' title='Excellent' data-value='4'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                    <li class='star' title='WOW!!!' data-value='5'>
+                                        <i class='fa fa-star fa-fw'></i>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class='success-box'>
+                                <div class='clearfix'></div>
+
+                                <div class='text-message'></div>
+                                <div class='clearfix'></div>
+                            </div>
+
+
+
+                        </section>
                     </div>
                 </div>
             </fieldset>
@@ -140,8 +270,9 @@
                         <tr>
                             <th><img src="../assets/Cerelac.png" style="width: 10em; height: 10em;"
                                     onclick="location.href='productDetailsB.html';"></th>
-                            <th style="padding-left: 2em"><img src="../assets/milo.png" style="width: 10em; height: 12em;"
-                                    onclick="location.href='productDetailsC.html';"></th>
+                            <th style="padding-left: 2em"><img src="../assets/milo.png"
+                                    style="width: 10em; height: 12em;" onclick="location.href='productDetailsC.html';">
+                            </th>
                         </tr>
                         <tr>
                             <td>Nestle CERELAC Infant Ceralac..</td>
@@ -177,7 +308,120 @@
                 $('#newQuestion').val('');
             }
         });
+
+        D
+        $('#relatedAddBtn').on('click', function () {
+            var imgSrc = document.getElementById("productImg").src;
+            var title = document.getElementById("productTitle").innerText;
+            var price = document.getElementById("productPrice").innerText;
+
+            // console.log('productImgSrc is : '+imgSrc); 
+            // console.log('productTitle is : '+title); 
+            // console.log('productPrice : '+price); 
+
+            window.localStorage.setItem("productImgSrc", imgSrc);
+            window.localStorage.setItem("productTitle", title);
+            window.localStorage.setItem("productPrice", price);
+        });
+
+
+        $("#replyButton").on("click", function () {
+            $("#replyButton").hide();
+            $("#textboxDiv").show();
+            $("#textboxDiv").append("<div><input type='text'/></div>");
+            $("#reply").append('&nbsp;&nbsp;&nbsp;<button style="background-color: #31BB67; color: white;  margin-top: 1em;">Reply</button>');
+
+        });
+
+        $("#reply").on("click", function () {
+
+            $("#reply").hide();
+            var replyText = $('#textboxDiv').val();
+            console.log("replyText", replyText)
+            $("#answer").append('<h4>Venura </h4><p>' + replyText + '</p>');
+            $("#textboxDiv").hide();
+        });
+
+        $(document).ready(function () {
+
+            const whiteHeart = '\u2661';
+            const blackHeart = '\u2665';
+            const button = document.querySelector('button');
+            button.addEventListener('click', toggle);
+
+            function toggle() {
+                const like = button.textContent;
+                if (like == whiteHeart) {
+                    button.textContent = blackHeart;
+                } else {
+                    button.textContent = whiteHeart;
+                }
+            }
+
+            /* 1. Visualizing things on Hover - See next part for action on click */
+            $('#stars li').on('mouseover', function () {
+                var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+
+                // Now highlight all the stars that's not after the current hovered star
+                $(this).parent().children('li.star').each(function (e) {
+                    if (e < onStar) {
+                        $(this).addClass('hover');
+                    }
+                    else {
+                        $(this).removeClass('hover');
+                    }
+                });
+
+            }).on('mouseout', function () {
+                $(this).parent().children('li.star').each(function (e) {
+                    $(this).removeClass('hover');
+                });
+            });
+
+
+            /* 2. Action to perform on click */
+            $('#stars li').on('click', function () {
+                var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+                var stars = $(this).parent().children('li.star');
+
+                for (i = 0; i < stars.length; i++) {
+                    $(stars[i]).removeClass('selected');
+                }
+
+                for (i = 0; i < onStar; i++) {
+                    $(stars[i]).addClass('selected');
+                }
+
+                // JUST RESPONSE (Not needed)
+                var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+                var msg = "";
+                if (ratingValue > 1) {
+                    msg = "Thanks! You rated this " + ratingValue + " stars.";
+                }
+                else {
+                    msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+                }
+                responseMessage(msg);
+
+            });
+
+
+        });
+
+
+        function responseMessage(msg) {
+            $('.success-box').fadeIn(200);
+            $('.success-box div.text-message').html("<span>" + msg + "</span>");
+        }
+
+
     </script>
+    <script src="../js/addToCart.js"></script>
+    <!-- <style>
+        reply{
+            background-color: darkgrey;
+        }
+    </style> -->
 </body>
 
 </html>
