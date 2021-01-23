@@ -1,0 +1,17 @@
+.centered {
+    margin: auto;
+    align-content: center;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+
+.profile-picture {
+    max-width: 15%;
+    max-height:15%;
+}
+
+.logout {
+    margin: auto;
+    margin-top: 5%;
+}

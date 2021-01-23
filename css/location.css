@@ -1,0 +1,18 @@
+.map {
+    width: 50%;
+    float: left;
+}
+
+.map-details {
+    width: 50%;
+    float: right;
+}
+
+.util-btn {
+    background-color: #06DD1C !important; 
+    max-width: 50%;
+}
+
+.form-field {
+    max-width: 50%;
+}

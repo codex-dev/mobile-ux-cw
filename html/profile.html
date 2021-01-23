@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>My Profile</title>
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/default.css"/>
+    <link rel="stylesheet" href="../css/profile.css"/>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body class="ui-mobile-viewport ui-overlay-c">
+
+    <!--Header-->
+    <div data-role="header" data-theme="f" class="ui-header ui-bar-f" role="banner" >
+        <div class="ui-panel-content-wrap ui-body-c ui-panel-animate ui-panel-content-wrap-position-left ui-panel-content-wrap-display-reveal ui-panel-content-wrap-open header-content">
+            <!-- <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f ui-focus toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">Menu</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a> -->
+            
+            <a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-iconpos="notext" class="ui-btn-left toggle-side-panel" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu"><span class="ui-btn-inner"><span class="ui-btn-text">
+                <img src="../assets/side-menu.png" width="40" height="40">
+            </a>
+        
+            <h1 class="title">Fresh Mart</h1>
+        </div>
+    </div>
+
+    <div class="ui-content content">
+        <div class="centered">
+            <h1>My Profile</h1>
+            <img src="../assets/profile-pic.jpg" class="profile-picture"></img>
+            <h2> John Doe</h2>
+            <div class="buttons">
+                <a href="deliverylocation.html" data-role="button" data-icon="arrow-r">Delivery Locations</a>
+
+                <a href="paymentmethods.html" data-role="button" data-icon="arrow-r">Payment Methods</a>
+
+                <a href="loyalty-points.html" data-role="button" data-icon="arrow-r">My Loyalty Plans</a>
+            </div>
+
+
+            <a href="login.html" data-role="button" data-icon="delete" class="logout">Log Out</a>
+            </div>
+        </div>
+    </div>
+    <!--Side Panel-->
+    <div data-role="panel" data-position="left" data-position-fixed="false" data-display="reveal" id="nav-panel" data-theme="a" class="ui-panel ui-panel-position-left ui-panel-display-reveal ui-body-a ui-panel-animate ui-panel-open panel">
+
+        <div class="ui-panel-inner"><ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin-top:-16px;" class="nav-search ui-listview side-btn">
+            <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="a" class="side-btn"><div class="ui-li"><div class="ui-btn-text">
+                <a href="#" class="ui-link-inherit">Products</a>
+            <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="a" class="side-btn"><div class="ui-btn-inner ui-li"><div class="ui-btn-text ">
+                <a href="#" class="ui-link-inherit">Wishlist</a>
+            <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="a" class="side-btn"><div class="ui-btn-inner ui-li"><div class="ui-btn-text">
+                <a href="#" class="ui-link-inherit">My Orders</a>
+        </ul></div>
+    </div>
+    <!--Content Goes Here-->
+</body>
+</html>
