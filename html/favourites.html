@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Wishlist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- the three things that jQuery Mobile needs to work -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <link rel="stylesheet" href="../css/favourites.css"/>
+    <link rel="stylesheet" href="../css/navigation.css"/>
+    <link rel="stylesheet" href="../css/item_list.css"/>
+    <script src="../js/favourites.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="favourites_Page">
+
+        <!-- Header to be added -->
+
+        <div class="container">
+            <div class="search_sort_section">
+                <div class="search_sort_item">
+                    <input type="search" name="search_sort" class="search" id="searchItem" data-clear-btn="true" placeholder="Search Saved Items">
+                </div>
+
+                <div class="search_sort_item">
+                    <a href="#" class="nav__link">
+                        <i class="material-icons nav__icon sortByName sortMe" id="sortName">sort_by_alpha</i>
+                    </a>
+                </div>
+
+                <div class="search_sort_item">
+                    <div class="vl"></div>
+                </div>
+
+                <div class="search_sort_item">
+                    <a href="#" class="nav__link">
+                        <i class="material-icons nav__icon sortByPrice sortMe " id="sortPrice">sort</i>
+                    </a>
+                </div>
+                <!-- toast message -->
+                <div data-role="popup" id="displayToast" data-position-to="window" data-transition="turn">
+                    <p> </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="favouritePage__buttons">
+                <div>
+                    <a href="#addEmail" id="email_btn" data-role="button" class="ui-btn-inline ui-btn ui-disabled ui-shadow ui-corner-all ui-btn-icon-left ui-icon-mail">Send Email</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Favourite Item List -->
+        <div class="container">
+            <ul class="favourite_itemList" id="favourite_itemList">
+
+            </ul>
+        </div>
+
+    </div> 
+    
+</body>
+
+</html>
